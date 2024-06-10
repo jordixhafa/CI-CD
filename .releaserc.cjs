@@ -1,5 +1,5 @@
 module.exports = {
-    repositoryUrl: 'https://github.com/jcruiz22/practica-valuable-pipeline.git',
+    repositoryUrl: 'https://github.com/jordixhafa/CI-CD.git',
     branches: ['main']
   };
   
