@@ -7,7 +7,7 @@ env:
   OPENSHIFT_TOKEN: ${{ secrets.OPENSHIFT_TOKEN }}
 
   IMAGE_REGISTRY: hub.docker.com/jordixhafa
-  IMAGE_REGISTRY_USER: jordixhafa
+  IMAGE_REGISTRY_USER: default-dockercfg-cpth7
   IMAGE_REGISTRY_PASSWORD: ${{ secrets.IMAGE_REGISTRY_PASSWORD }}
 
 
