@@ -1,3 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application
+  template:
+    metadata:
+      labels:
+        app: application
+    spec:
+      containers:
+      - name: application-container
+        image: jordixhafa/cicd:latest
+        ports:
+        - containerPort: 8080
+
+---
 apiVersion: v1
 kind: Service
 metadata:

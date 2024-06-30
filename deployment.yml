@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: application
+      app: cicd
   template:
     metadata:
       labels:
-        app: application
+        app: cicd
     spec:
       containers:
-      - name: application-container
+      - name: cicd
         image: jordixhafa/cicd:latest
         ports:
         - containerPort: 8080
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: application-service
+  name: cicd
 spec:
   selector:
-    app: application
+    app: cicd
   ports:
     - protocol: TCP
       port: 80
@@ -35,10 +35,10 @@ spec:
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: application-route
+  name: cicd
 spec:
   to:
     kind: Service
-    name: application-service
+    name: cicd
   port:
     targetPort: 8080
