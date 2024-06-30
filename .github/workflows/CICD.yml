@@ -115,6 +115,6 @@ jobs:
 
     - name: Apply Kubernetes Manifests
       run: |
-        kubectl apply -f ../deployment.yaml
-        kubectl apply -f ../service.yaml
-        kubectl apply -f ../route.yaml
+        kubectl apply -f ./deployment.yml
+        kubectl apply -f ./service.yml
+        kubectl apply -f ./route.yml
