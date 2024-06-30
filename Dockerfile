@@ -1,21 +1,20 @@
-# Use the official Node.js image
+# Establecer la imagen base
 FROM node:20
 
-# Create and set the working directory
+# Crear directorio de trabajo
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Instalar dependencias
+# El asterisco (*) es usado para asegurar que tanto package.json como package-lock.json sean copiados
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copiar los archivos del proyecto
 COPY . .
 
-# Expose the port the app runs on
+# Exponer el puerto que usa la aplicación
 EXPOSE 3000
 
-# Command to run the application
-CMD ["node", "src/app.js"]
+# Comando para ejecutar la aplicación
+CMD [ "node", "src/server.mjs" ]
 
