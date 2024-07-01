@@ -109,9 +109,14 @@ jobs:
       with:
         version: 'v1.21.0'
 
+    # https://github.com/redhat-actions/oc-login#readme
     - name: Log in to OpenShift
-      run: |
-        oc login --token=${{ secrets.OPENSHIFT_TOKEN }} --server=${{ secrets.OPENSHIFT_SERVER }}
+      uses: redhat-actions/oc-login@v1
+      with:
+        openshift_server_url: ${{ env.OPENSHIFT_SERVER }}
+        openshift_token: ${{ env.OPENSHIFT_TOKEN }}
+        insecure_skip_tls_verify: true
+        namespace: ${{ env.OPENSHIFT_NAMESPACE }}
 
     - name: Apply Kubernetes Manifests
       run: |
