@@ -16,7 +16,7 @@ spec:
       - name: application-container
         image: jordixhafa/cicd:v1.0.0
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
 
 ---
 apiVersion: v1
@@ -29,7 +29,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8080
+      targetPort: 3000
 
 ---
 apiVersion: route.openshift.io/v1
@@ -41,4 +41,4 @@ spec:
     kind: Service
     name: application-service
   port:
-    targetPort: 8080
+    targetPort: 3000
