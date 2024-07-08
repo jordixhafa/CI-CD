@@ -99,7 +99,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{env.APP_NAME}}:v1.0.1
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{env.APP_NAME}}:v1.0.2
             
 
     # The path the image was pushed to is now stored in ${{ steps.push-image.outputs.registry-path }}
